@@ -292,7 +292,7 @@ button:hover {
 
     margin-left: 15px;
 
-    padding: 35px 15px;
+    padding: 35px 10px;
 
     background: rgba(255, 255, 255, 0.88);
 
@@ -300,7 +300,9 @@ button:hover {
 
     border: 1px solid #999;
 
-    font-size: 30px;
+    font-size: 20px;
+    white-space: nowrap;
+    min-width: 0;
 
     color: #111;
 }
@@ -637,7 +639,7 @@ button:focus-visible,[role=button]:focus-visible { outline:3px solid #e39713; ou
 .result-area textarea { box-sizing:border-box; width:100%; margin-top:12px; padding:12px; font:inherit; border-radius:10px; border:1px solid #666; }
 .result-area button { margin-top:16px; width:100%; font-size:17px; }
 #answerList p { text-align:left; background:#edf8f8; border-radius:12px; padding:12px; overflow-wrap:anywhere; }
-@media(max-width:360px){.game-screen{padding:18px}.speech-bubble{padding:45px 22px 25px;border-radius:55px}.character-image{width:100px;height:100px}.character-name{font-size:23px;padding:28px 10px}.info-buttons{gap:10px}.play-footer{gap:6px}#avatar{width:52px;height:52px}.footer-right{width:130px}#mission{font-size:17px}}
+@media(max-width:360px){.game-screen{padding:18px}.speech-bubble{padding:45px 22px 25px;border-radius:55px}.character-image{width:100px;height:100px}.character-name{font-size:18px;padding:28px 10px}.info-buttons{gap:10px}.play-footer{gap:6px}#avatar{width:52px;height:52px}.footer-right{width:130px}#mission{font-size:17px}}
 
 /* ===== 2026-10-26 指定箇所のみ：写真移動・吹き出し・操作位置 ===== */
 .photo-frame { position:absolute; z-index:-1; background:#e8ecec; overflow:visible; }

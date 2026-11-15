@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>いつもの道、ちがう視点</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mode2.css">
+</head>
+
+
+<body>
+
+    <div class="game-screen">
+
+        <!-- ==============================
+             タイトル画面
+             ============================== -->
+
+        <div id="titleScreen" class="screen title-area">
+
+            <h1>
+                いつもの道、<br>
+                ちがう視点
+            </h1>
+
+            <p>
+                大学の中を、<br>
+                いつもの道を3人の視点で歩いてみよう
+            </p>
+
+            <button id="startButton">
+                ゲームをはじめる
+            </button>
+
+        </div>
+
+
+        <!-- ==============================
+             はじめに画面
+             ============================== -->
+
+        <div id="introScreen" class="screen intro-area">
+
+            <h2>はじめに</h2>
+
+            <div class="intro-text">
+
+                <p>・3人の視点で進みます。</p>
+
+                <p>・それぞれにmissionがあるのでクリアを目指そう！</p>
+
+                <p>・選んだ人の立場になって、自分ならどうするか考えてみよう！</p>
+
+            </div>
+
+            <button id="nextButton">
+                次へ
+            </button>
+
+        </div>
+
+
+        <!-- ==============================
+             キャラクター選択画面
+             ============================== -->
+
+        <div id="characterScreen" class="screen character-area">
+
+            <h2>キャラクター選択</h2>
+
+
+            <!-- 田中 はな -->
+
+            <div class="character-item" data-character="hana">
+
+                <div class="character-image">
+                    <img src="田中はな.jpg" alt="田中はな">
+                </div>
+
+                <div class="character-name">
+                    田中　はな
+                </div>
+
+            </div>
+
+
+            <!-- 斉藤 あおい -->
+
+            <div class="character-item" data-character="aoi">
+
+                <div class="character-image">
+                    <img src="斉藤あおい.jpg" alt="斉藤あおい">
+                </div>
+
+                <div class="character-name">
+                    斉藤　あおい
+                </div>
+
+            </div>
+
+
+            <!-- 吉田 りお -->
+
+            <div class="character-item" data-character="rio">
+
+                <div class="character-image">
+                    <img src="吉田りお.jpg" alt="吉田りお">
+                </div>
+
+                <div class="character-name">
+                    吉田　りお
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             人物説明の吹き出し
+             ============================== -->
+
+        <div id="characterInfo" class="character-info">
+
+            <div class="speech-bubble">
+
+                <div class="speech-arrow"></div>
+
+
+                <!-- 人物名 -->
+
+                <h3 id="infoName">
+                    田中 はな(19)
+                </h3>
+
+
+                <!-- 人物説明 -->
+
+                <div id="infoText" class="info-text">
+
+                    <p>・ここに人物の説明を書きます。</p>
+
+                    <p>・ここに人物の説明を書きます。</p>
+
+                </div>
+
+
+                <!-- ボタン -->
+
+                <div class="info-buttons">
+
+                    <button id="backButton">
+                        戻る
+                    </button>
+
+                    <button id="decideButton">
+                        決定
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+<!-- ==============================
+     田中はな 導入画面
+     ============================== -->
+
+<div id="hanaMissionScreen" class="screen mission-screen">
+
+    <div class="mission-box">
+
+        <h2>
+            田中 はな で決定！
+        </h2>
+
+        <div class="mission-title">
+            ～Missionその1～
+        </div>
+
+        <p class="mission-text">
+            はなさんになりきって、<br>
+            教室で授業を受ける準備をしよう！
+        </p>
+
+    </div>
+
+    <button id="hanaStartButton" class="mission-start-button">
+        はじめる
+    </button>
+
+</div>
+
+
+<!-- ==============================
+     斉藤あおい 導入画面
+     ============================== -->
+
+<div id="aoiMissionScreen" class="screen mission-screen">
+
+    <div class="mission-box">
+
+        <h2>
+            斉藤 あおい で決定！
+        </h2>
+
+        <div class="mission-title">
+            ～Missionその1～
+        </div>
+
+        <p class="mission-text">
+            あおいさんになりきって、<br>
+            教室で授業を受ける準備をしよう！
+        </p>
+
+    </div>
+
+    <button id="aoiStartButton" class="mission-start-button">
+        はじめる
+    </button>
+
+</div>
+
+
+<!-- ==============================
+     吉田りお 導入画面
+     ============================== -->
+
+<div id="rioMissionScreen" class="screen mission-screen">
+
+    <div class="mission-box">
+
+        <h2>
+            吉田 りお で決定！
+        </h2>
+
+        <div class="mission-title">
+            ～Missionその1～
+        </div>
+
+        <p class="mission-text">
+            りおさんになりきって、<br>
+            教室で授業を受ける準備をしよう！
+        </p>
+
+    </div>
+
+    <button id="rioStartButton" class="mission-start-button">
+        はじめる
+    </button>
+
+</div>
+
+    </div>
+
+    <script src="game-data.js"></script><script src="photo-routes.js"></script><script src="rio-data.js"></script><script src="game-adjustments.js"></script><script src="recap-data.js"></script><script src="reflection-service.js"></script><script src="survey.js"></script><script src="script.js"></script><script src="mode2-data.js"></script><script src="mode2.js"></script>
+
+</body>
+</html>       

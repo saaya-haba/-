@@ -1,0 +1,33 @@
+/* MODE2内だけに適用。MODE1の写真・吹き出し・操作欄には適用しません。 */
+.game-screen.mode2-active { display:block; padding:24px 14px; }
+.mode2-screen { background:rgba(255,255,255,.97); border-radius:24px; padding:20px 14px; color:#14272b; text-align:left; }
+.mode2-screen h2 { font-size:23px; line-height:1.4; margin:4px 0 12px; }
+.mode2-screen h3 { font-size:17px; margin:22px 0 10px; }
+.mode2-screen p { font-size:15px; line-height:1.7; margin:8px 0 16px; }
+.mode2-screen button { font-family:inherit; box-shadow:none; }
+.mode2-screen .m2-person { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+.mode2-screen .m2-person img { width:44px; height:44px; object-fit:cover; border-radius:50%; border:1px solid #444; }
+.mode2-screen .m2-person span { font-size:15px; font-weight:bold; }
+.mode2-screen .m2-return { background:white; color:#164e56; border:1px solid #83c9cd; width:auto; font-size:14px; margin:0 0 16px; padding:10px 12px; border-radius:12px; min-height:44px; }
+.mode2-screen .m2-filters { display:flex; gap:8px; margin:14px 0; }
+.mode2-screen .m2-filters button { width:auto; flex:1; margin:0; padding:10px 7px; min-height:44px; border:1px solid #0a969c; border-radius:12px; background:white; color:#14616a; font-size:14px; }
+.mode2-screen .m2-filters button[aria-pressed=true] { background:#0a969c; color:white; }
+.mode2-screen .m2-card { display:flex; align-items:center; text-align:left; gap:12px; width:100%; margin:0 0 10px; padding:10px; border:1px solid #d4dfe0; border-radius:14px; background:white; color:#14272b; }
+.mode2-screen .m2-card img { width:68px; height:84px; border-radius:8px; object-fit:cover; flex-shrink:0; background:#e8ecec; }
+.mode2-screen .m2-card-text { min-width:0; }
+.mode2-screen .m2-card strong { display:block; font-size:16px; line-height:1.5; }
+.mode2-screen .m2-card small { display:block; margin-top:6px; font-size:12px; font-weight:normal; color:#467379; }
+.mode2-screen .m2-empty { padding:18px 4px; line-height:1.8; }
+.mode2-screen .m2-photo-wrap { position:relative; height: min(52svh,430px); min-height:220px; background:#e8ecec; overflow:hidden; border-radius:14px; }
+.mode2-screen .m2-photo { width:100%; height:100%; object-fit:contain; display:block; }
+.mode2-screen .m2-shadow { position:absolute; inset:0; pointer-events:none; }
+.mode2-screen .m2-photo-controls { display:flex; align-items:center; justify-content:space-between; gap:8px; margin:10px 0; }
+.mode2-screen .m2-photo-controls button,.mode2-screen .m2-vision { background:white; color:#14616a; border:1px solid #a3cdd0; border-radius:10px; padding:9px 12px; min-height:44px; font-size:14px; width:auto; margin:0; }
+.mode2-screen .m2-photo-controls span { font-size:14px; }
+.mode2-screen .m2-caption { color:#52696e; font-size:13px; margin:6px 0 12px; }
+.mode2-screen .m2-memo { background:#fff9e8; border-left:4px solid #e6c978; padding:14px; border-radius:4px 12px 12px 4px; margin:16px 0; }
+.mode2-screen .m2-memo ul { padding-left:1.2em; margin:0; font-size:16px; line-height:1.8; }
+.mode2-screen .m2-memo li+li { margin-top:8px; }
+.mode2-screen .m2-next-row { display:flex; gap:10px; margin-top:20px; }
+.mode2-screen .m2-next-row button { flex:1; width:auto; margin:0; padding:12px 8px; min-height:44px; font-size:14px; border-radius:12px; background:#0a969c; }
+.mode2-screen .m2-status { font-size:12px; color:#65797c; }

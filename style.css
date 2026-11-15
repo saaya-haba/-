@@ -1,0 +1,684 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    font-family: sans-serif;
+
+    background-color: #eeeeee;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+
+/* ==============================
+   ゲーム画面全体
+   ============================== */
+
+.game-screen {
+
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+
+    background-image: url("background.jpeg");
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* 背景を少し白くする */
+
+.game-screen::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(255, 255, 255, 0.35);
+}
+
+
+/* ==============================
+   画面共通
+   ============================== */
+
+.screen {
+
+    width: 100%;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* ==============================
+   タイトル画面
+   ============================== */
+
+.title-area {
+
+    padding: 40px 25px;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    border-radius: 25px;
+}
+
+
+h1 {
+
+    margin: 0;
+
+    font-size: 36px;
+
+    line-height: 1.4;
+}
+
+
+.title-area p {
+
+    margin-top: 25px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* ==============================
+   ボタン共通
+   ============================== */
+
+button {
+
+    width: 90%;
+
+    margin-top: 35px;
+
+    padding: 20px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background-color: #7acbd1;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+button:hover {
+
+    opacity: 0.85;
+}
+
+
+/* ==============================
+   はじめに画面
+   ============================== */
+
+#introScreen {
+
+    display: none;
+}
+
+
+.intro-area {
+
+    padding: 35px 20px;
+
+    color: #333;
+}
+
+
+.intro-area h2 {
+
+    font-size: 32px;
+
+    margin-bottom: 40px;
+}
+
+
+.intro-text {
+
+    text-align: left;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    padding: 20px 25px;
+
+    border-radius: 20px;
+}
+
+
+.intro-text p {
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+
+#nextButton {
+
+    margin-top: 30px;
+}
+
+
+/* ==============================
+   キャラクター選択画面
+   ============================== */
+
+#characterScreen {
+
+    display: none;
+}
+
+
+.character-area {
+
+    padding: 5px 0 20px;
+}
+
+
+.character-area h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 35px;
+
+    font-size: 32px;
+
+    font-weight: normal;
+
+    color: white;
+
+    text-shadow:
+        1px 1px 2px black,
+        -1px -1px 2px black,
+        1px -1px 2px black,
+        -1px 1px 2px black;
+}
+
+
+/* キャラクター1人分 */
+
+.character-item {
+
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    margin-bottom: 45px;
+
+    cursor: pointer;
+}
+
+
+/* キャラクター画像部分 */
+
+.character-image {
+
+    flex-shrink: 0;
+
+    width: 135px;
+    height: 135px;
+
+    border-radius: 50%;
+
+    border: 3px solid #111;
+
+    overflow: hidden;
+
+    background-color: white;
+}
+
+
+/* キャラクター画像 */
+
+.character-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 50%;
+}
+
+
+/* キャラクター名 */
+
+.character-name {
+
+    flex: 1;
+
+    margin-left: 15px;
+
+    padding: 35px 15px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border-radius: 25px;
+
+    border: 1px solid #999;
+
+    font-size: 30px;
+
+    color: #111;
+}
+
+
+/* タップしたとき */
+
+.character-item:active {
+
+    transform: scale(0.98);
+}
+
+
+/* ==============================
+   人物説明の吹き出し
+   ============================== */
+
+.character-info {
+
+    display: none;
+
+    position: absolute;
+
+    z-index: 10;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* 吹き出し本体 */
+
+.speech-bubble {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 390px;
+
+    background: white;
+
+    border: 2px solid #111;
+
+    border-radius: 80px;
+
+    padding: 70px 35px 35px;
+}
+
+
+/* 吹き出しの三角 */
+
+.speech-arrow {
+
+    position: absolute;
+
+    top: -70px;
+    left: 30%;
+
+    width: 0;
+    height: 0;
+
+    border-left: 45px solid transparent;
+    border-right: 15px solid transparent;
+
+    border-bottom: 70px solid #111;
+}
+
+
+/* 三角の中を白くする */
+
+.speech-arrow::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 5px;
+    left: -42px;
+
+    width: 0;
+    height: 0;
+
+    border-left: 42px solid transparent;
+    border-right: 13px solid transparent;
+
+    border-bottom: 65px solid white;
+}
+
+
+/* 人物名 */
+
+#infoName {
+
+    margin: 0 0 35px;
+
+    text-align: center;
+
+    font-size: 27px;
+
+    font-weight: normal;
+}
+
+
+/* 説明文 */
+
+.info-text {
+
+    text-align: left;
+}
+
+
+.info-text p {
+
+    margin: 0 0 30px;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+}
+
+
+/* ==============================
+   戻る・決定ボタン
+   ============================== */
+
+.info-buttons {
+
+    display: flex;
+
+    gap: 20px;
+
+    margin-top: 25px;
+}
+
+
+.info-buttons button {
+
+    width: 50%;
+
+    margin-top: 0;
+
+    padding: 18px 10px;
+
+    font-size: 24px;
+}
+
+
+/* 戻る */
+
+#backButton {
+
+    background-color: white;
+
+    color: #111;
+
+    border: 2px solid #111;
+}
+
+
+/* 決定 */
+
+#decideButton {
+
+    background-color: #0aa3a8;
+
+    color: white;
+
+    border: 2px solid white;
+}
+
+
+/* ==============================
+   3人共通・導入画面
+   ============================== */
+
+.mission-screen {
+
+    display: none;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-height: 100vh;
+
+    z-index: 20;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+}
+
+
+/* Missionの白いボックス */
+
+.mission-box {
+
+    width: 100%;
+
+    padding: 55px 25px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border: 1px solid #999;
+
+    border-radius: 70px;
+
+    text-align: center;
+}
+
+
+/* 「○○で決定！」 */
+
+.mission-box h2 {
+
+    margin: 0 0 65px;
+
+    font-size: 30px;
+
+    font-weight: normal;
+
+    color: #111;
+}
+
+
+/* Missionその1 */
+
+.mission-title {
+
+    margin-bottom: 20px;
+
+    font-size: 27px;
+
+    color: #111;
+}
+
+
+/* Missionの説明 */
+
+.mission-text {
+
+    margin: 0;
+
+    font-size: 27px;
+
+    line-height: 1.6;
+
+    color: #111;
+}
+
+
+/* 「はじめる」ボタン */
+
+.mission-start-button {
+
+    width: 75%;
+
+    margin-top: 75px;
+
+    padding: 25px 20px;
+
+    background-color: #0aa3a8;
+
+    color: white;
+
+    border: 3px solid white;
+
+    border-radius: 20px;
+
+    font-size: 30px;
+
+    font-weight: normal;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+/* ===== 以下は追加したゲーム本体。上の既存デザインは維持しています ===== */
+[hidden] { display: none !important; }
+.coming-soon { opacity: .55; cursor: default; }
+.character-name small { display:block; font-size:14px; margin-top:8px; }
+.game-screen.playing { padding:0; height:100svh; min-height:620px; overflow:hidden; display:block; }
+.playing::before { display:none; }
+#playScreen { position:relative; min-height:620px; height:100%; isolation:isolate; color:#111; }
+.scene-photo { position:absolute; inset:-12px; z-index:-3; background-position:center; background-size:cover; }
+.central-shadow { position:absolute; inset:0; z-index:-2; pointer-events:none; background:radial-gradient(ellipse var(--shadow-size,42%) 30% at 50% 50%,rgba(0,0,0,var(--darkness,.88)) 0%,rgba(0,0,0,.7) 38%,transparent 100%); }
+.play-header { display:flex; align-items:flex-start; gap:12px; justify-content:space-between; padding:48px 16px 8px; }
+#mission { font-size:20px; line-height:1.5; color:white; text-shadow:1px 1px 2px black,-1px -1px 2px black; }
+#clock { background:white; border:1px solid #222; border-radius:10px; padding:12px 10px; font-size:20px; flex-shrink:0; }
+.place-label { margin:8px 16px; padding:6px 12px; background:rgba(255,255,255,.94); width:fit-content; border-radius:10px; font-size:15px; }
+.paths { display:flex; flex-wrap:wrap; align-content:flex-start; gap:8px; padding:12px 16px; max-height:27%; overflow:auto; }
+.paths button { background:white; color:#6f2479; border:2px solid #922a96; width:auto; max-width:100%; padding:10px 14px; font-size:16px; margin:0; border-radius:24px; }
+.play-message { position:absolute; bottom:142px; left:14px; right:14px; max-height:40%; overflow:auto; padding:14px; border-radius:22px; border:1px solid #333; background:rgba(255,255,255,.97); }
+#sceneText { margin:0 0 8px; white-space:pre-line; font-size:16px; line-height:1.6; }
+#eventActions { display:grid; gap:8px; }
+#eventActions button { width:100%; margin:0; padding:12px; font-size:16px; background:#0a969c; }
+.play-footer { position:absolute; bottom:14px; left:14px; right:14px; display:flex; align-items:flex-end; gap:10px; }
+.play-footer button { margin:0; font-size:16px; width:auto; }
+#avatar { flex-shrink:0; width:64px; height:64px; padding:0; border:2px solid #111; border-radius:50%; overflow:hidden; background:#176d87; }
+#avatar img { width:100%; height:100%; object-fit:cover; }
+#hint { background:white; color:black; border:1px solid #222; padding:14px 10px; }
+.footer-right { margin-left:auto; width:148px; display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
+#back { padding:10px; background:#88ce97; color:#111; border:1px solid #333; }
+#fatigue { padding:6px 8px; border:1px solid #222; background:white; border-radius:8px; width:100%; }
+#fatigue label { display:block; font-size:13px; }
+#fatigueBar { width:100%; height:20px; accent-color:#246599; }
+.leave-game { position:absolute; top:8px; right:12px; width:auto; padding:5px 10px; margin:0; font-size:12px; background:rgba(255,255,255,.95); color:#222; border:1px solid #555; }
+button:disabled { opacity:.45; cursor:default; }
+button:focus-visible,[role=button]:focus-visible { outline:3px solid #e39713; outline-offset:3px; }
+.tutorial { position:absolute; inset:0; z-index:50; background:rgba(0,0,0,.15); display:flex; align-items:center; justify-content:center; padding:18px; cursor:pointer; }
+.tutorial-bubble { background:#f5f5f5; border:2px solid #222; border-radius:45px; padding:22px; width:100%; max-width:330px; text-align:center; box-shadow:0 5px 24px #0003; pointer-events:none; }
+.tutorial-bubble h3 { margin:8px; }
+.tutorial-bubble p { font-size:19px; line-height:1.6; margin:12px 0; }
+.tutorial-bubble span { font-size:13px; }
+.tutorial-target { outline:4px solid #f0b935 !important; outline-offset:4px; }
+#gameDialog { width:calc(100% - 36px); max-width:390px; border-radius:30px; border:2px solid #222; padding:24px; }
+#gameDialog p { white-space:pre-line; line-height:1.8; }
+#gameDialog::backdrop { background:#0005; }
+#gameDialog button { margin-top:12px; width:100%; }
+.result-area { background:rgba(255,255,255,.96); border-radius:25px; padding:25px 18px; margin:10px 0; }
+.result-area p { white-space:pre-line; line-height:1.8; }
+.result-area label { display:block; text-align:left; line-height:1.8; }
+.result-area textarea { box-sizing:border-box; width:100%; margin-top:12px; padding:12px; font:inherit; border-radius:10px; border:1px solid #666; }
+.result-area button { margin-top:16px; width:100%; font-size:17px; }
+#answerList p { text-align:left; background:#edf8f8; border-radius:12px; padding:12px; overflow-wrap:anywhere; }
+@media(max-width:360px){.game-screen{padding:18px}.speech-bubble{padding:45px 22px 25px;border-radius:55px}.character-image{width:100px;height:100px}.character-name{font-size:23px;padding:28px 10px}.info-buttons{gap:10px}.play-footer{gap:6px}#avatar{width:52px;height:52px}.footer-right{width:130px}#mission{font-size:17px}}
+
+/* ===== 2026-10-26 指定箇所のみ：写真移動・吹き出し・操作位置 ===== */
+.photo-frame { position:absolute; z-index:-1; background:#e8ecec; overflow:visible; }
+.photo-frame .scene-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; z-index:0; }
+.photo-frame .central-shadow { z-index:1; }
+.photo-frame .paths { position:absolute; inset:0; padding:0; max-height:none; overflow:visible; display:block; z-index:2; }
+.paths .photo-hotspot { position:absolute; transform:translate(-50%,-50%); width:48px; height:48px; min-width:48px; padding:0; margin:0; background:transparent; border:0; border-radius:50%; }
+.photo-hotspot::after { content:''; display:block; position:absolute; width:var(--dot-size,24px); height:var(--dot-size,24px); left:50%; top:50%; transform:translate(-50%,-50%); border:3px solid #ed2929; border-radius:50%; background:rgba(255,255,255,.08); box-shadow:0 0 2px #fff; }
+.photo-hotspot:hover { opacity:1; }
+.photo-hotspot:hover::after { background:rgba(237,41,41,.22); }
+.play-header { padding-top:calc(82px + env(safe-area-inset-top,0px)); pointer-events:none; }
+.place-label { position:relative; pointer-events:none; }
+.leave-game { top:calc(28px + env(safe-area-inset-top,0px)); min-height:44px; padding:8px 12px; }
+.play-footer { bottom:calc(38px + env(safe-area-inset-bottom,0px)); gap:10px; }
+#avatar { width:80px; height:80px; }
+#back { font-size:18px; min-height:48px; padding:12px 16px; }
+.footer-right { width:166px; flex-shrink:0; }
+#fatigue { padding:8px 10px; }
+#fatigue label { font-size:16px; }
+#fatigueBar { height:26px; }
+.play-message { bottom:calc(202px + env(safe-area-inset-bottom,0px)); padding:0; overflow:visible; max-height:none; }
+.speech-content { padding:14px; max-height:min(38svh,340px); overflow:auto; border-radius:22px; }
+.play-message::before,.play-message::after { content:''; position:absolute; left:23px; width:0; height:0; border-style:solid; pointer-events:none; }
+.play-message::before { bottom:-29px; border-width:29px 18px 0 0; border-color:#333 transparent transparent transparent; }
+.play-message::after { bottom:-26px; left:24px; border-width:27px 16px 0 0; border-color:rgba(255,255,255,.97) transparent transparent transparent; }
+#eventActions button { min-height:44px; }
+.tap-continue { position:absolute; inset:0; width:100%; height:100%; border-radius:0; padding:0; margin:0; background:transparent; z-index:35; }
+.tap-continue:hover { opacity:1; }
+.mission-ready { position:absolute; inset:0; z-index:60; padding:30px 20px; background:rgba(255,255,255,.35); display:flex; align-items:center; }
+.mission-ready .mission-box { background:rgba(255,255,255,.96); }
+.mission-ready h2 { margin-bottom:35px; }
+.mission-ready button { width:90%; background:#0aa3a8; }
+.mode-dialog { width:calc(100% - 40px); max-width:380px; border:2px solid #222; border-radius:25px; padding:24px; }
+.mode-dialog::backdrop { background:#0005; }
+.mode-dialog button { width:100%; }
+@media(max-width:360px){#avatar{width:68px;height:68px}.footer-right{width:146px}.play-footer{gap:7px}#hint{padding:12px 8px}#back{font-size:17px}.play-header{padding-top:80px}#clock{padding:12px 8px;font-size:19px}.play-message{bottom:202px}.speech-content{max-height:32svh}}
+/* 写真の余白に別の場所の背景が見えないようにします。導入画面は変更しません。 */
+.game-screen.playing { background-image:none; background-color:#e8ecec; }
+
+/* クリア画面に、その回に体験したことだけを表示します。 */
+#recapSection { text-align:left; margin:18px 0; }
+#recapSection h3 { font-size:18px; margin:0 0 10px; }
+#recapList { margin:0; padding-left:1.4em; font-size:15px; line-height:1.75; overflow-wrap:anywhere; }
+#recapList li { margin-bottom:8px; }

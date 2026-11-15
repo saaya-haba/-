@@ -8,7 +8,7 @@
 const routes = {
   "hana-7": {
     "title": "校門前",
-    "photo": "photos/田中はな　-7.jpeg",
+    "photo": "photos/田中はな-7.jpeg",
     "photoLabel": "hana-7",
     "links": [],
     "hotspots": [
@@ -23,7 +23,7 @@ const routes = {
   },
   "hana-6": {
     "title": "スロープ",
-    "photo": "photos/田中はな　-6.jpeg",
+    "photo": "photos/田中はな-6.jpeg",
     "photoLabel": "hana-6",
     "links": [],
     "hotspots": [
@@ -38,7 +38,7 @@ const routes = {
   },
   "hana-5": {
     "title": "スロープ",
-    "photo": "photos/田中はな　-5.jpeg",
+    "photo": "photos/田中はな-5.jpeg",
     "photoLabel": "hana-5",
     "links": [],
     "hotspots": [
@@ -53,7 +53,7 @@ const routes = {
   },
   "hana-4": {
     "title": "スロープ",
-    "photo": "photos/田中はな　-4.jpeg",
+    "photo": "photos/田中はな-4.jpeg",
     "photoLabel": "hana-4",
     "links": [],
     "hotspots": [
@@ -68,7 +68,7 @@ const routes = {
   },
   "hana-3": {
     "title": "スロープ",
-    "photo": "photos/田中はな　-3.jpeg",
+    "photo": "photos/田中はな-3.jpeg",
     "photoLabel": "hana-3",
     "links": [],
     "hotspots": [
@@ -83,7 +83,7 @@ const routes = {
   },
   "hana-2": {
     "title": "スロープ",
-    "photo": "photos/田中はな　-2.jpeg",
+    "photo": "photos/田中はな-2.jpeg",
     "photoLabel": "hana-2",
     "links": [],
     "hotspots": [
@@ -98,7 +98,7 @@ const routes = {
   },
   "hana-1": {
     "title": "大学の入口",
-    "photo": "photos/田中はな　-1.jpeg",
+    "photo": "photos/田中はな-1.jpeg",
     "photoLabel": "hana-1",
     "links": [],
     "hotspots": [
